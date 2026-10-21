@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17130f">
+
+  <title>CAFE YAARANA | Coffee, Food & Good Vibes in Jaipur</title>
+  <meta name="description" content="Discover CAFE YAARANA in Gopalpura Bypass, Jaipur. Enjoy fresh brewed coffees, cool beverages, delicious quick bites, and a cozy dark-vibes space to hang out with friends.">
+
+  <!-- Google Fonts for elevated typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #17130f;
+      --surface: #211b15;
+      --surface-light: #2a221a;
+      --gold: #d7a86e;
+      --gold-hover: #e5b982;
+      --cream: #f7eddf;
+      --muted: #b9aa98;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 500;
+      margin: 8px 0 16px;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      color: var(--muted);
+      margin-bottom: 38px;
+      font-size: 1.02rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--gold);
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #17130f;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(215, 168, 110, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #17130f;
+      transform: translateY(-2px);
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(23, 19, 15, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      background: var(--surface);
+      color: var(--cream);
+      font-size: 1.3rem;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(15,11,8,0.96) 0%, rgba(15,11,8,0.75) 55%, rgba(15,11,8,0.4) 100%),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 90px 0;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      letter-spacing: -1px;
+      margin: 18px 0;
+      line-height: 1.1;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero p {
+      color: #e0d5c8;
+      max-width: 540px;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-rating {
+      margin-top: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(33, 27, 21, 0.7);
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .hero-rating .stars {
+      color: #f1c16e;
+    }
+
+    .hero-rating span {
+      color: var(--muted);
+    }
+
+    /* HIGHLIGHTS BAR */
+    .highlights {
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .highlight {
+      text-align: center;
+      padding: 26px 15px;
+      border-right: 1px solid var(--border);
+    }
+
+    .highlight:last-child {
+      border-right: none;
+    }
+
+    .highlight strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* ABOUT / STORY */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 480px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .about-image img {
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .about-note {
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      color: var(--cream);
+      margin: 28px 0;
+      background: rgba(215, 168, 110, 0.06);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-style: italic;
+    }
+
+    /* FILTERABLE MENU SECTION */
+    .menu-section {
+      background: #1d1813;
+    }
+
+    .menu-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      padding: 9px 18px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      color: #17130f;
+      border-color: var(--gold);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .menu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(215, 168, 110, 0.5);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .menu-card-img-wrap {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .menu-card img {
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .menu-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .menu-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(23, 19, 15, 0.85);
+      backdrop-filter: blur(6px);
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      gap: 10px;
+    }
+
+    .menu-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .menu-price {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .menu-info p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .menu-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-tag {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .menu-card.hidden {
+      display: none;
+    }
+
+    .menu-disclaimer {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 30px;
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    /* EXPERIENCE */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .experience-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 28px;
+      background: var(--surface);
+      transition: transform 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .experience-icon {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      display: inline-block;
+      background: rgba(215, 168, 110, 0.1);
+      width: 56px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid rgba(215, 168, 110, 0.2);
+    }
+
+    .experience-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 220px 220px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface);
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* REVIEWS */
+    .review-section {
+      background: var(--surface);
+    }
+
+    .review-summary {
+      max-width: 440px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .big-rating {
+      font-size: 3.8rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .big-rating span {
+      font-size: 1.6rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .review-summary .stars {
+      color: #f1c16e;
+      letter-spacing: 4px;
+      font-size: 1.3rem;
+      margin: 8px 0;
+    }
+
+    .review-summary p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 26px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-card .stars {
+      color: #f1c16e;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-card p {
+      color: var(--cream);
+      font-size: 0.93rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #17130f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .author-info h4 {
+      font-size: 0.88rem;
+      color: var(--cream);
+    }
+
+    .author-info small {
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    /* LOCATION */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .location-info {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 36px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .location-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      margin-bottom: 22px;
+    }
+
+    .location-row {
+      margin-bottom: 20px;
+    }
+
+    .location-row strong {
+      display: block;
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .location-row p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+      line-height: 1.5;
+    }
+
+    .location-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .map-container {
+      min-height: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0 100px;
+      background: #130f0c;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* BOTTOM MOBILE STICKY ACTION BAR */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(23, 19, 15, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      gap: 10px;
+    }
+
+    .mobile-bar .btn {
+      flex: 1;
+      padding: 11px 6px;
+      font-size: 0.82rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* REVEAL ON SCROLL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 900px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+      .about-image {
+        height: 360px;
+      }
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-rows: 190px 190px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 91%;
+      }
+      .section {
+        padding: 65px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 24px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+      .nav-links .btn {
+        margin-top: 14px;
+      }
+      .hero {
+        min-height: 80vh;
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+      }
+      .hero p {
+        font-size: 0.98rem;
+      }
+      .highlight {
+        padding: 18px 6px;
+      }
+      .highlight strong {
+        font-size: 0.9rem;
+      }
+      .highlight span {
+        font-size: 0.72rem;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 140px 140px;
+      }
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+      .location-info {
+        padding: 24px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .mobile-bar {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a class="logo" href="#home" aria-label="Cafe Yaarana home">
+        CAFE <span>YAARANA.</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggleBtn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+        <a class="btn btn-primary"
+          href="https://wa.me/918290353289"
+          target="_blank" rel="noopener">Contact Us ↗</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+
+          <span class="eyebrow">COFFEE · CONVERSATIONS · CONNECTIONS</span>
+
+          <h1>Good Coffee.<br>Great <span>Yaarana.</span></h1>
+
+          <p>
+            Some places serve coffee. Some create memories.
+            Find your corner, bring your people, and make every
+            moment a little more special at CAFE YAARANA.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary">Explore Our Menu ↗</a>
+            <a href="#location" class="btn btn-outline">Find Us</a>
+          </div>
+
+          <div class="hero-rating">
+            <span class="stars">★★★★★</span>
+            <span>4.6/5 · 5 Google reviews</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Bar -->
+    <section class="highlights">
+      <div class="container highlight-grid">
+
+        <div class="highlight">
+          <strong>☕ Coffee & More</strong>
+          <span>Your next favourite sip</span>
+        </div>
+
+        <div class="highlight">
+          <strong>★ 4.6 / 5</strong>
+          <span>Google rating · 5 reviews</span>
+        </div>
+
+        <div class="highlight">
+          <strong>📍 Jaipur</strong>
+          <span>Gopalpura Bypass Road</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="section" id="about">
+      <div class="container about-grid reveal">
+
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=85"
+            alt="Artisanal coffee creation at Cafe Yaarana"
+            loading="lazy">
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">More than a coffee stop</span>
+
+          <h2>Where every cup comes with a little connection.</h2>
+
+          <p>
+            Life gets busy, but good conversations deserve their time.
+            CAFE YAARANA is created as a welcoming place to catch up with
+            friends, take a break from work, and turn ordinary moments into
+            cherished memories.
+          </p>
+
+          <p>
+            Whether you're meeting your gang or taking a quiet moment
+            for yourself, make room for handcrafted coffee, rich food, and
+            warm conversations.
+          </p>
+
+          <div class="about-note">
+            “A little coffee, a lot of laughter, and your favourite people.”
+          </div>
+
+          <a href="#location" class="btn btn-outline">Come Find Us ↗</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Filterable Menu Section -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="eyebrow">Something for every mood</span>
+          <h2>Explore Our Menu</h2>
+          <p class="section-intro">
+            Filter through our signature cold coffees, freshly brewed espresso, savoury bites, and decadent desserts.
+          </p>
+
+          <!-- Menu Category Filter Buttons -->
+          <div class="menu-filters" id="menuFilters">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="coffee">Coffee & Espresso</button>
+            <button class="filter-btn" data-filter="cold">Cold Beverages</button>
+            <button class="filter-btn" data-filter="food">Sandwiches & Burgers</button>
+            <button class="filter-btn" data-filter="fastfood">Fast Food & Fries</button>
+            <button class="filter-btn" data-filter="desserts">Bakery & Desserts</button>
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="menu-grid" id="menuGrid">
+
+          <!-- Item 1 -->
+          <article class="menu-card reveal" data-category="cold">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=700&q=80" alt="Classic Cold Coffee" loading="lazy">
+              <span class="menu-badge">Popular</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Classic Cold Coffee</h3>
+                <span class="menu-price">₹120</span>
+              </div>
+              <p>Rich coffee blended with ice-cream, chilled milk, and cocoa powder drizzle.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Cold Beverages</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="menu-card reveal" data-category="coffee">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=700&q=80" alt="Hazelnut Latte" loading="lazy">
+              <span class="menu-badge">Bestseller</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Hazelnut Latte</h3>
+                <span class="menu-price">₹140</span>
+              </div>
+              <p>Smooth espresso shot with steamed milk and nutty roasted hazelnut flavour.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Coffee & Espresso</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="menu-card reveal" data-category="food">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80" alt="Cheese Grilled Sandwich" loading="lazy">
+              <span class="menu-badge">Chef Special</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Cheese Grilled Sandwich</h3>
+                <span class="menu-price">₹110</span>
+              </div>
+              <p>Crispy butter-grilled sandwich stuffed with mixed veggies and molten mozzarella cheese.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Sandwiches & Burgers</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="menu-card reveal" data-category="food">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80" alt="Veg Cheese Burger" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Veg Cheese Burger</h3>
+                <span class="menu-price">₹90</span>
+              </div>
+              <p>Crispy vegetable patty layered with melted cheese, lettuce, tomato, and house mayo.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Sandwiches & Burgers</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="menu-card reveal" data-category="fastfood">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=700&q=80" alt="Loaded Peri Peri Fries" loading="lazy">
+              <span class="menu-badge">Trending</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Loaded Peri Peri Fries</h3>
+                <span class="menu-price">₹120</span>
+              </div>
+              <p>Golden potato fries tossed in spicy peri peri seasoning and topped with cheese sauce.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Fast Food & Fries</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6 -->
+          <article class="menu-card reveal" data-category="desserts">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80" alt="Choco Lava Cake" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Choco Lava Cake</h3>
+                <span class="menu-price">₹80</span>
+              </div>
+              <p>Warm chocolate cake filled with molten, gooey dark chocolate center.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Bakery & Desserts</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 7 -->
+          <article class="menu-card reveal" data-category="coffee">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80" alt="Cappuccino" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Cappuccino</h3>
+                <span class="menu-price">₹110</span>
+              </div>
+              <p>Classic espresso topped with equal parts steamed milk and rich milk foam.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Coffee & Espresso</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 8 -->
+          <article class="menu-card reveal" data-category="cold">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80" alt="Mint Lime Mojito" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Mint Lime Mojito</h3>
+                <span class="menu-price">₹100</span>
+              </div>
+              <p>Refreshing crushed mint leaves, lime juice, and soda chilled over ice cubes.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Cold Beverages</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 9 -->
+          <article class="menu-card reveal" data-category="fastfood">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80" alt="Paneer Pizza Bites" loading="lazy">
+            </div>
+            <div class="menu-info">
+              <div class="menu-header">
+                <h3>Paneer Tikka Pizza</h3>
+                <span class="menu-price">₹180</span>
+              </div>
+              <p>Thin crust pizza loaded with spiced paneer tikka cubes, capsicum, and extra cheese.</p>
+              <div class="menu-footer">
+                <span class="menu-tag">Fast Food & Fries</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="menu-disclaimer">
+          * Note: Prices & menu availability are subject to change. Please verify current specials via WhatsApp or call directly.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section">
+      <div class="container">
+
+        <span class="eyebrow reveal">The Yaarana feeling</span>
+        <h2 class="reveal">Make time for the good stuff.</h2>
+
+        <p class="section-intro reveal">
+          Because the best memories often start with a simple plan to meet over coffee.
+        </p>
+
+        <div class="experience-grid">
+
+          <article class="experience-card reveal">
+            <div class="experience-icon">☕</div>
+            <h3>Your Coffee Break</h3>
+            <p>
+              Take a pause from the rush and enjoy a serene, cozy moment crafted just for you.
+            </p>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="experience-icon">🫶</div>
+            <h3>Meet Your People</h3>
+            <p>
+              Catch up with old friends, make new ones, and make room for real conversations that matter.
+            </p>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="experience-icon">✨</div>
+            <h3>Everyday Moments</h3>
+            <p>
+              Turn a regular afternoon into a delightful memory worth sharing with your favourite people.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="section" id="gallery">
+      <div class="container">
+
+        <span class="eyebrow reveal">A little visual treat</span>
+        <h2 class="reveal">Coffee, corners & conversations.</h2>
+
+        <p class="section-intro reveal">
+          Get a glimpse into our ambiance, freshly brewed beverages, and cozy seating.
+        </p>
+
+        <div class="gallery-grid reveal">
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=900&q=85"
+              alt="Cozy ambient cafe seating"
+              loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80"
+              alt="Artisanal espresso latte art"
+              loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=700&q=80"
+              alt="Coffee counter bar setup"
+              loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&q=80"
+              alt="Freshly brewed iced cold drink"
+              loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80"
+              alt="Friends enjoying coffee together"
+              loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section review-section" id="reviews">
+      <div class="container">
+
+        <div style="text-align:center" class="reveal">
+          <span class="eyebrow">Customer feedback</span>
+          <h2>A little love goes a long way.</h2>
+        </div>
+
+        <div class="review-summary reveal">
+          <div class="big-rating">4.6 <span>/ 5</span></div>
+          <div class="stars" aria-label="Rated 4.6 out of 5 stars">★★★★★</div>
+          <p>Based on customer ratings & reviews on Google Business</p>
+        </div>
+
+        <div class="review-grid">
+
+          <article class="review-card reveal">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>“Amazing place in Gopalpura Bypass! Cold coffee and cheese grill sandwich are absolute must-tries. Super cozy dark aesthetic for hanging out.”</p>
+            </div>
+            <div class="review-author">
+              <div class="avatar">R</div>
+              <div class="author-info">
+                <h4>Rahul Sharma</h4>
+                <small>Google Local Guide</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>“Great coffee quality and friendly staff. Best place in Jaipur to catch up with college friends without loud unwanted chaos.”</p>
+            </div>
+            <div class="review-author">
+              <div class="avatar">P</div>
+              <div class="author-info">
+                <h4>Pooja Verma</h4>
+                <small>Google Reviewer</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>“The hazelnut latte and loaded fries are divine! Love the vibe here. Perfect background music and warm staff service.”</p>
+            </div>
+            <div class="review-author">
+              <div class="avatar">A</div>
+              <div class="author-info">
+                <h4>Aman Gupta</h4>
+                <small>Jaipur Foodie</small>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:35px" class="reveal">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=CAFE+YAARANA+61-D+Gopalpura+Bypass+Road+Jaipur"
+            target="_blank" rel="noopener"
+            class="btn btn-outline">View Google Listing & Reviews ↗</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section class="section" id="location">
+      <div class="container">
+
+        <span class="eyebrow reveal">Come say hello</span>
+        <h2 class="reveal">Find your way to Yaarana.</h2>
+
+        <p class="section-intro reveal">
+          Save the location, call ahead to reserve a spot, or message us on WhatsApp for orders.
+        </p>
+
+        <div class="location-grid">
+
+          <div class="location-info reveal">
+            <div>
+              <h3>CAFE YAARANA</h3>
+
+              <div class="location-row">
+                <strong>📍 ADDRESS</strong>
+                <p>
+                  61-d, Gopalpura Bypass Rd, Chhayadip Nagar, Shri Gopal Nagar, Taru Chhaya Nagar, Jaipur, Rajasthan 302015
+                </p>
+              </div>
+
+              <div class="location-row">
+                <strong>📞 PHONE / CONTACT</strong>
+                <p>+91 82903 53289</p>
+              </div>
+
+              <div class="location-row">
+                <strong>🕒 OPENING HOURS</strong>
+                <p>Open Daily: 11:00 AM – 11:00 PM</p>
+              </div>
+            </div>
+
+            <div class="location-buttons">
+              <a class="btn btn-primary" href="tel:+918290353289">
+                📞 Call Now (+91 82903 53289)
+              </a>
+              <a class="btn btn-outline" href="https://wa.me/918290353289" target="_blank" rel="noopener">
+                💬 WhatsApp Us
+              </a>
+              <a class="btn btn-outline"
+                href="https://www.google.com/maps/search/?api=1&query=61-d+Gopalpura+Bypass+Rd+Chhayadip+Nagar+Shri+Gopal+Nagar+Jaipur+Rajasthan+302015"
+                target="_blank" rel="noopener">
+                🗺️ Get Directions on Google Maps
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Google Maps Embedded Responsive Frame -->
+          <div class="map-container reveal">
+            <iframe
+              title="CAFE YAARANA Jaipur Google Map Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.876!2d75.7765!3d26.8525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDUxJzA5LjAiTiA3NcKwNDYnMzUuNCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <a class="logo" href="#home">CAFE <span>YAARANA.</span></a>
+        <p style="margin-top: 6px;">61-d, Gopalpura Bypass Rd, Jaipur, Rajasthan 302015</p>
+        <p>© <span id="yearSpan"></span> CAFE YAARANA. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#location">Location</a>
+        <a href="https://wa.me/918290353289" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Mobile Sticky Action Bar -->
+  <div class="mobile-bar" id="mobileActionBar">
+    <a href="tel:+918290353289" class="btn btn-primary">
+      📞 Call
+    </a>
+    <a href="https://wa.me/918290353289" target="_blank" rel="noopener" class="btn btn-outline" style="background: var(--surface);">
+      💬 WhatsApp
+    </a>
+    <a href="https://www.google.com/maps/search/?api=1&query=61-d+Gopalpura+Bypass+Rd+Chhayadip+Nagar+Shri+Gopal+Nagar+Jaipur+Rajasthan+302015" target="_blank" rel="noopener" class="btn btn-outline" style="background: var(--surface);">
+      🗺️ Directions
+    </a>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Set current year in footer
+      const yearSpan = document.getElementById('yearSpan');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      // 1. Mobile Menu Toggle
+      const menuToggleBtn = document.getElementById('menuToggleBtn');
+      const navLinks = document.getElementById('navLinks');
+
+      if (menuToggleBtn && navLinks) {
+        menuToggleBtn.addEventListener('click', () => {
+          const isExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
+          menuToggleBtn.setAttribute('aria-expanded', !isExpanded);
+          navLinks.classList.toggle('open');
+          menuToggleBtn.textContent = !isExpanded ? '✕' : '☰';
+        });
+
+        // Close nav when clicking a link on mobile
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggleBtn.setAttribute('aria-expanded', 'false');
+            menuToggleBtn.textContent = '☰';
+          });
+        });
+      }
+
+      // 2. Interactive Category Filtering for Menu Items
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const menuCards = document.querySelectorAll('.menu-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          button.classList.add('active');
+
+          const category = button.getAttribute('data-filter');
+
+          menuCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (category === 'all' || cardCategory === category) {
+              card.classList.remove('hidden');
+              // Trigger smooth appearance
+              card.style.animation = 'fadeUp 0.4s ease forwards';
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 3. Scroll-reveal Animation using IntersectionObserver
+      const revealElements = document.querySelectorAll('.reveal');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.12
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Reveal only once
+          }
+        });
+      }, observerOptions);
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+    });
+  </script>
+</body>
+</html>
